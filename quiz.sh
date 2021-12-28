@@ -2,7 +2,17 @@ read number
 
 if [ $(($number % 2)) -eq 0 ]
 then
-	echo "$number even"
+	i=$number
+	while [ $i -gt 0 ]
+	do
+		str=""
+		for j in $(seq 1 $i);
+		do
+			str+="o"
+		done
+		echo $str
+		i=$(($i-1))
+	done
 else
 	i=1
 	str=""
